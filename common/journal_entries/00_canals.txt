@@ -3,22 +3,44 @@
 	group = je_group_technology
 	on_monthly_pulse = {
 		effect = {
-			change_variable = { name = survey_suez_taken add = 1 }
+			change_variable = {
+				name = survey_suez_taken
+				add = 1
+			}
 		}
 	}
-	complete = { scope:journal_entry = { is_goal_complete = yes } }
-	on_complete = {
-		if = { limit = { has_modifier = modifier_surveying_suez } remove_modifier = modifier_surveying_suez }
-		trigger_event = { id = canal_events.100 }
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
 	}
-	current_value = { value = root.var:survey_suez_taken }
-	goal_add_value = { value = 18 }
+	on_complete = {
+		if = {
+			limit = {
+				has_modifier = modifier_surveying_suez
+			}
+			remove_modifier = modifier_surveying_suez
+		}
+		trigger_event = {
+			id = canal_events.100
+		}
+	}
+	current_value = {
+		value = root.var:survey_suez_taken
+	}
+	goal_add_value = {
+		value = 18
+	}
 	invalid = {
 		OR = {
-			NOT = { has_variable = survey_suez_taken }
+			NOT = {
+				has_variable = survey_suez_taken
+			}
 			s:STATE_SINAI = {
 				any_scope_state = {
-					NOT = { owner = ROOT }
+					NOT = {
+						owner = ROOT
+					}
 					has_building = building_suez_canal
 				}
 			}
@@ -26,7 +48,12 @@
 	}
 	on_invalid = {
 		remove_variable = survey_suez_taken
-		if = { limit = { has_modifier = modifier_surveying_suez } remove_modifier = modifier_surveying_suez }
+		if = {
+			limit = {
+				has_modifier = modifier_surveying_suez
+			}
+			remove_modifier = modifier_surveying_suez
+		}
 	}
 	progressbar = yes
 	weight = 10
@@ -47,13 +74,19 @@ je_suez_canal = {
 			}
 		}
 	}
-	on_complete = { set_global_variable = suez_canal_complete }
+	on_complete = {
+		set_global_variable = suez_canal_complete
+	}
 	invalid = {
 		OR = {
-			NOT = { has_variable = survey_suez_taken }
+			NOT = {
+				has_variable = survey_suez_taken
+			}
 			s:STATE_SINAI = {
 				any_scope_state = {
-					NOT = { owner = ROOT }
+					NOT = {
+						owner = ROOT
+					}
 					has_building = building_suez_canal
 				}
 			}
@@ -61,7 +94,12 @@ je_suez_canal = {
 	}
 	on_invalid = {
 		remove_variable = survey_suez_taken
-		if = { limit = { has_modifier = modifier_surveying_suez } remove_modifier = modifier_surveying_suez }
+		if = {
+			limit = {
+				has_modifier = modifier_surveying_suez
+			}
+			remove_modifier = modifier_surveying_suez
+		}
 	}
 	should_be_pinned_by_default = yes
 }
@@ -71,22 +109,44 @@ je_panama_survey = {
 	group = je_group_technology
 	on_monthly_pulse = {
 		effect = {
-			change_variable = { name = survey_panama_taken add = 1 }
+			change_variable = {
+				name = survey_panama_taken
+				add = 1
+			}
 		}
 	}
-	complete = { scope:journal_entry = { is_goal_complete = yes } }
-	on_complete = {
-		if = { limit = { has_modifier = modifier_surveying_panama } remove_modifier = modifier_surveying_panama }
-		trigger_event = { id = canal_events.101 }
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
 	}
-	current_value = { value = root.var:survey_panama_taken }
-	goal_add_value = { value = 12 }
+	on_complete = {
+		if = {
+			limit = {
+				has_modifier = modifier_surveying_panama
+			}
+			remove_modifier = modifier_surveying_panama
+		}
+		trigger_event = {
+			id = canal_events.101
+		}
+	}
+	current_value = {
+		value = root.var:survey_panama_taken
+	}
+	goal_add_value = {
+		value = 12
+	}
 	invalid = {
 		OR = {
-			NOT = { has_variable = survey_panama_taken }
+			NOT = {
+				has_variable = survey_panama_taken
+			}
 			s:STATE_PANAMA = {
 				any_scope_state = {
-					NOT = { owner = ROOT }
+					NOT = {
+						owner = ROOT
+					}
 					has_building = building_panama_canal
 				}
 			}
@@ -94,7 +154,12 @@ je_panama_survey = {
 	}
 	on_invalid = {
 		remove_variable = survey_panama_taken
-		if = { limit = { has_modifier = modifier_surveying_panama } remove_modifier = modifier_surveying_panama }
+		if = {
+			limit = {
+				has_modifier = modifier_surveying_panama
+			}
+			remove_modifier = modifier_surveying_panama
+		}
 	}
 	progressbar = yes
 	weight = 10
@@ -115,13 +180,19 @@ je_panama_canal = {
 			}
 		}
 	}
-	on_complete = { set_global_variable = panama_canal_complete }
+	on_complete = {
+		set_global_variable = panama_canal_complete
+	}
 	invalid = {
 		OR = {
-			NOT = { has_variable = survey_panama_taken }
+			NOT = {
+				has_variable = survey_panama_taken
+			}
 			s:STATE_PANAMA = {
 				any_scope_state = {
-					NOT = { owner = ROOT }
+					NOT = {
+						owner = ROOT
+					}
 					has_building = building_panama_canal
 				}
 			}
@@ -129,7 +200,12 @@ je_panama_canal = {
 	}
 	on_invalid = {
 		remove_variable = survey_panama_taken
-		if = { limit = { has_modifier = modifier_surveying_panama } remove_modifier = modifier_surveying_panama }
+		if = {
+			limit = {
+				has_modifier = modifier_surveying_panama
+			}
+			remove_modifier = modifier_surveying_panama
+		}
 	}
 	should_be_pinned_by_default = yes
 }

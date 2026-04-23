@@ -1,9 +1,0 @@
-{
-    "cwtools.rules_version": "manual",
-    "cwtools.rules_folder": "C:\\git\\cwtools-vic3-config",
-    "cwtools.cache.vic3": "D:\\SteamLibrary\\steamapps\\common\\Victoria 3",
-    "cwtools.localisation.languages": [
-        "English",
-        "Spanish"
-    ]
-}

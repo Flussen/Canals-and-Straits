@@ -1,201 +1,358 @@
 ﻿cs_button_gibraltar_open = {
 	name = "cs_button_gibraltar_open"
 	desc = "cs_button_gibraltar_open_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_AL_RIF }
-	possible = { NOT = { has_variable = cs_gibraltar_policy_open_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_AL_RIF
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_gibraltar_policy_open_var
+		}
+	}
 	effect = {
 		remove_variable = cs_gibraltar_policy_tolls_var
 		remove_variable = cs_gibraltar_policy_blockade_var
 		set_variable = cs_gibraltar_policy_open_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_suez_open = {
 	name = "cs_button_suez_open"
 	desc = "cs_button_suez_open_desc"
 	visible = {
-		s:STATE_SINAI = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_suez_canal } } }
+		s:STATE_SINAI = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_suez_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_suez_policy_free_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_suez_policy_free_var
+		}
+	}
 	effect = {
 		remove_variable = cs_suez_policy_allied_tolls_var
 		remove_variable = cs_suez_policy_strict_var
 		set_variable = cs_suez_policy_free_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_suez_tolls = {
 	name = "cs_button_suez_tolls"
 	desc = "cs_button_suez_tolls_desc"
 	visible = {
-		s:STATE_SINAI = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_suez_canal } } }
+		s:STATE_SINAI = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_suez_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_suez_policy_allied_tolls_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_suez_policy_allied_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_suez_policy_free_var
 		remove_variable = cs_suez_policy_strict_var
 		set_variable = cs_suez_policy_allied_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_suez_strict = {
 	name = "cs_button_suez_strict"
 	desc = "cs_button_suez_strict_desc"
 	visible = {
-		s:STATE_SINAI = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_suez_canal } } }
+		s:STATE_SINAI = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_suez_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_suez_policy_strict_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_suez_policy_strict_var
+		}
+	}
 	effect = {
 		remove_variable = cs_suez_policy_free_var
 		remove_variable = cs_suez_policy_allied_tolls_var
 		set_variable = cs_suez_policy_strict_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_panama_open = {
 	name = "cs_button_panama_open"
 	desc = "cs_button_panama_open_desc"
 	visible = {
-		s:STATE_PANAMA = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_panama_canal } } }
+		s:STATE_PANAMA = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_panama_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_panama_policy_free_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_panama_policy_free_var
+		}
+	}
 	effect = {
 		remove_variable = cs_panama_policy_allied_tolls_var
 		remove_variable = cs_panama_policy_strict_var
 		set_variable = cs_panama_policy_free_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_panama_tolls = {
 	name = "cs_button_panama_tolls"
 	desc = "cs_button_panama_tolls_desc"
 	visible = {
-		s:STATE_PANAMA = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_panama_canal } } }
+		s:STATE_PANAMA = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_panama_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_panama_policy_allied_tolls_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_panama_policy_allied_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_panama_policy_free_var
 		remove_variable = cs_panama_policy_strict_var
 		set_variable = cs_panama_policy_allied_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_panama_strict = {
 	name = "cs_button_panama_strict"
 	desc = "cs_button_panama_strict_desc"
 	visible = {
-		s:STATE_PANAMA = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_panama_canal } } }
+		s:STATE_PANAMA = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_panama_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_panama_policy_strict_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_panama_policy_strict_var
+		}
+	}
 	effect = {
 		remove_variable = cs_panama_policy_free_var
 		remove_variable = cs_panama_policy_allied_tolls_var
 		set_variable = cs_panama_policy_strict_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_kiel_open = {
 	name = "cs_button_kiel_open"
 	desc = "cs_button_kiel_open_desc"
 	visible = {
-		s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_kiel_canal } } }
+		s:STATE_SCHLESWIG_HOLSTEIN = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_kiel_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_kiel_policy_free_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_kiel_policy_free_var
+		}
+	}
 	effect = {
 		remove_variable = cs_kiel_policy_allied_tolls_var
 		remove_variable = cs_kiel_policy_strict_var
 		set_variable = cs_kiel_policy_free_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_kiel_tolls = {
 	name = "cs_button_kiel_tolls"
 	desc = "cs_button_kiel_tolls_desc"
 	visible = {
-		s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_kiel_canal } } }
+		s:STATE_SCHLESWIG_HOLSTEIN = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_kiel_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_kiel_policy_allied_tolls_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_kiel_policy_allied_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_kiel_policy_free_var
 		remove_variable = cs_kiel_policy_strict_var
 		set_variable = cs_kiel_policy_allied_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_kiel_strict = {
 	name = "cs_button_kiel_strict"
 	desc = "cs_button_kiel_strict_desc"
 	visible = {
-		s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = root any_scope_building = { is_building_type = building_kiel_canal } } }
+		s:STATE_SCHLESWIG_HOLSTEIN = {
+			any_scope_state = {
+				owner = root
+				any_scope_building = {
+					is_building_type = building_kiel_canal
+				}
+			}
+		}
 	}
-	possible = { NOT = { has_variable = cs_kiel_policy_strict_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_kiel_policy_strict_var
+		}
+	}
 	effect = {
 		remove_variable = cs_kiel_policy_free_var
 		remove_variable = cs_kiel_policy_allied_tolls_var
 		set_variable = cs_kiel_policy_strict_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_gibraltar_tolls = {
 	name = "cs_button_gibraltar_tolls"
 	desc = "cs_button_gibraltar_tolls_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_AL_RIF }
-	possible = { NOT = { has_variable = cs_gibraltar_policy_tolls_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_AL_RIF
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_gibraltar_policy_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_gibraltar_policy_open_var
 		remove_variable = cs_gibraltar_policy_blockade_var
 		set_variable = cs_gibraltar_policy_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_gibraltar_blockade = {
 	name = "cs_button_gibraltar_blockade"
 	desc = "cs_button_gibraltar_blockade_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_AL_RIF }
-	possible = { NOT = { has_variable = cs_gibraltar_policy_blockade_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_AL_RIF
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_gibraltar_policy_blockade_var
+		}
+	}
 	effect = {
 		remove_variable = cs_gibraltar_policy_open_var
 		remove_variable = cs_gibraltar_policy_tolls_var
 		set_variable = cs_gibraltar_policy_blockade_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_bosphorus_open = {
 	name = "cs_button_bosphorus_open"
 	desc = "cs_button_bosphorus_open_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE }
-	possible = { NOT = { has_variable = cs_bosphorus_policy_open_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_bosphorus_policy_open_var
+		}
+	}
 	effect = {
 		remove_variable = cs_bosphorus_policy_tolls_var
 		remove_variable = cs_bosphorus_policy_blockade_var
 		set_variable = cs_bosphorus_policy_open_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_bosphorus_tolls = {
 	name = "cs_button_bosphorus_tolls"
 	desc = "cs_button_bosphorus_tolls_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE }
-	possible = { NOT = { has_variable = cs_bosphorus_policy_tolls_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_bosphorus_policy_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_bosphorus_policy_open_var
 		remove_variable = cs_bosphorus_policy_blockade_var
 		set_variable = cs_bosphorus_policy_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_bosphorus_blockade = {
@@ -204,89 +361,143 @@ cs_button_bosphorus_blockade = {
 	visible = {
 		country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
 	}
-	possible = { NOT = { has_variable = cs_bosphorus_policy_blockade_var } }
+	possible = {
+		NOT = {
+			has_variable = cs_bosphorus_policy_blockade_var
+		}
+	}
 	effect = {
 		remove_variable = cs_bosphorus_policy_open_var
 		remove_variable = cs_bosphorus_policy_tolls_var
 		set_variable = cs_bosphorus_policy_blockade_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_malacca_open = {
 	name = "cs_button_malacca_open"
 	desc = "cs_button_malacca_open_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_MALAYA }
-	possible = { NOT = { has_variable = cs_malacca_policy_open_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_MALAYA
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_malacca_policy_open_var
+		}
+	}
 	effect = {
 		remove_variable = cs_malacca_policy_tolls_var
 		remove_variable = cs_malacca_policy_blockade_var
 		set_variable = cs_malacca_policy_open_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_malacca_tolls = {
 	name = "cs_button_malacca_tolls"
 	desc = "cs_button_malacca_tolls_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_MALAYA }
-	possible = { NOT = { has_variable = cs_malacca_policy_tolls_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_MALAYA
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_malacca_policy_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_malacca_policy_open_var
 		remove_variable = cs_malacca_policy_blockade_var
 		set_variable = cs_malacca_policy_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_malacca_blockade = {
 	name = "cs_button_malacca_blockade"
 	desc = "cs_button_malacca_blockade_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_MALAYA }
-	possible = { NOT = { has_variable = cs_malacca_policy_blockade_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_MALAYA
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_malacca_policy_blockade_var
+		}
+	}
 	effect = {
 		remove_variable = cs_malacca_policy_open_var
 		remove_variable = cs_malacca_policy_tolls_var
 		set_variable = cs_malacca_policy_blockade_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_hormuz_open = {
 	name = "cs_button_hormuz_open"
 	desc = "cs_button_hormuz_open_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_LARISTAN }
-	possible = { NOT = { has_variable = cs_hormuz_policy_open_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_LARISTAN
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_hormuz_policy_open_var
+		}
+	}
 	effect = {
 		remove_variable = cs_hormuz_policy_tolls_var
 		remove_variable = cs_hormuz_policy_blockade_var
 		set_variable = cs_hormuz_policy_open_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_hormuz_tolls = {
 	name = "cs_button_hormuz_tolls"
 	desc = "cs_button_hormuz_tolls_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_LARISTAN }
-	possible = { NOT = { has_variable = cs_hormuz_policy_tolls_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_LARISTAN
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_hormuz_policy_tolls_var
+		}
+	}
 	effect = {
 		remove_variable = cs_hormuz_policy_open_var
 		remove_variable = cs_hormuz_policy_blockade_var
 		set_variable = cs_hormuz_policy_tolls_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
 
 cs_button_hormuz_blockade = {
 	name = "cs_button_hormuz_blockade"
 	desc = "cs_button_hormuz_blockade_desc"
-	visible = { country_or_subject_owns_entire_state_region = STATE_LARISTAN }
-	possible = { NOT = { has_variable = cs_hormuz_policy_blockade_var } }
+	visible = {
+		country_or_subject_owns_entire_state_region = STATE_LARISTAN
+	}
+	possible = {
+		NOT = {
+			has_variable = cs_hormuz_policy_blockade_var
+		}
+	}
 	effect = {
 		remove_variable = cs_hormuz_policy_open_var
 		remove_variable = cs_hormuz_policy_tolls_var
 		set_variable = cs_hormuz_policy_blockade_var
 	}
-	ai_chance = { value = 0 }
+	ai_chance = {
+		value = 0
+	}
 }
