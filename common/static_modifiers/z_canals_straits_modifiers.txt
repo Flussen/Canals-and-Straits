@@ -1,0 +1,220 @@
+﻿cs_suez_purchase = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_minting_add = -30000
+}
+
+cs_suez_sale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_minting_add = 30000
+}
+
+cs_panama_purchase = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_minting_add = -35000
+}
+
+cs_panama_sale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_minting_add = 35000
+}
+
+kiel_purchase = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_minting_add = -20000
+}
+
+kiel_sale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_minting_add = 20000
+}
+
+modifier_surveying_kiel = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -25
+}
+
+cs_gibraltar_control = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_trade_advantage_mult = 0.10
+	country_convoy_contribution_to_market_owner_add = 0.05
+}
+
+cs_bosphorus_control = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_trade_advantage_mult = 0.12
+	country_convoy_contribution_to_market_owner_add = 0.06
+}
+
+cs_malacca_control = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_trade_advantage_mult = 0.14
+	country_convoy_contribution_to_market_owner_add = 0.08
+}
+
+cs_hormuz_control = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_trade_advantage_mult = 0.16
+	country_convoy_contribution_to_market_owner_add = 0.08
+}
+
+cs_hormuz_regional_primacy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_authority_add = 25
+	country_influence_mult = 0.05
+	country_convoys_capacity_mult = 0.05
+}
+
+cs_gibraltar_policy_open = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -10
+}
+
+cs_gibraltar_policy_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -15
+	country_convoy_contribution_to_market_owner_add = 0.04
+}
+
+cs_gibraltar_policy_blockade = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -30
+	country_authority_add = -10
+	country_convoys_capacity_mult = 0.04
+}
+
+cs_bosphorus_policy_open = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -10
+}
+
+cs_bosphorus_policy_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -15
+	country_convoy_contribution_to_market_owner_add = 0.05
+}
+
+cs_bosphorus_policy_blockade = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -30
+	country_authority_add = -10
+	country_convoys_capacity_mult = 0.05
+}
+
+cs_malacca_policy_open = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -10
+}
+
+cs_malacca_policy_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -15
+	country_convoy_contribution_to_market_owner_add = 0.06
+}
+
+cs_malacca_policy_blockade = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -30
+	country_authority_add = -10
+	country_convoys_capacity_mult = 0.06
+}
+
+cs_hormuz_policy_open = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -10
+}
+
+cs_hormuz_policy_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -15
+	country_convoy_contribution_to_market_owner_add = 0.06
+}
+
+cs_hormuz_policy_blockade = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -30
+	country_authority_add = -10
+	country_convoys_capacity_mult = 0.06
+}
+
+cs_suez_policy_free = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+}
+
+cs_suez_policy_allied_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -15
+}
+
+cs_suez_policy_strict = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -30
+	country_authority_add = -10
+}
+
+cs_panama_policy_free = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+}
+
+cs_panama_policy_allied_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -15
+}
+
+cs_panama_policy_strict = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -30
+	country_authority_add = -10
+}
+
+cs_kiel_policy_free = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+}
+
+cs_kiel_policy_allied_tolls = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -10
+}
+
+cs_kiel_policy_strict = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_bureaucracy_add = -20
+	country_authority_add = -5
+}
+
+cs_strait_toll_minor = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_convoys_capacity_mult = -0.05
+	country_expenses_add = 3000
+}
+
+cs_strait_toll_major = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_convoys_capacity_mult = -0.15
+	country_convoy_damage_taken_mult = 0.15
+	country_expenses_add = 8000
+}
+
+cs_strait_blocked = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_convoys_capacity_mult = -0.40
+	country_convoy_damage_taken_mult = 0.75
+	country_expenses_add = 18000
+}
+
+cs_canal_transit_allied = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_convoys_capacity_mult = 0.02
+}
+
+cs_canal_transit_neutral = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_convoys_capacity_mult = -0.04
+	country_expenses_add = 4000
+}
+
+cs_canal_transit_hostile = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_convoys_capacity_mult = -0.12
+	country_convoy_damage_taken_mult = 0.10
+	country_expenses_add = 10000
+}

@@ -1,0 +1,223 @@
+﻿zw_decision_pruchase_port_said_for_suez_canal = {
+	is_shown = {
+		is_player = yes
+		has_variable = suez_survey_complete
+		p:x8ED45E.owner != root
+		p:xC01060.owner = root
+		p:x8ED45E.state = {
+			NOT = {
+				has_building = building_suez_canal
+			}
+		}
+	}
+	possible = {
+		OR = {
+			p:xC01060.state = {
+				has_building = building_suez_canal
+			}
+			AND = {
+				owns_treaty_port_in = STATE_SINAI
+				p:x8ED45E.owner = {
+					NOT = {
+						custom_tooltip = {
+							text = suez_survey_complete_tooltip
+							has_variable = suez_survey_complete
+						}
+					}
+				}
+			}
+		}
+		OR = {
+			country_rank > p:x8ED45E.owner.country_rank
+			prestige > {
+				add = p:x8ED45E.owner.prestige
+				multiply = 2
+			}
+		}
+	}
+	when_taken = {
+		add_modifier = {
+			name = cs_suez_purchase
+			months = 60
+			multiplier = 0.1
+		}
+		p:x8ED45E.owner = {
+			add_modifier = {
+				name = cs_suez_sale
+				months = 60
+				multiplier = 0.1
+			}
+			post_notification = zw_noti_pruchase_port_said_for_suez_canal
+		}
+		s:STATE_SINAI = {
+			set_owner_of_provinces = {
+				country = root
+				provinces = {
+					x8ED45E
+				}
+			}
+		}
+	}
+}
+
+cs_decision_purchase_colon_for_panama_canal = {
+	is_shown = {
+		is_player = yes
+		has_variable = panama_survey_complete
+		p:xD0EF40.owner != root
+		p:x8A8A20.owner = root
+		p:xD0EF40.state = {
+			NOT = {
+				has_building = building_panama_canal
+			}
+		}
+	}
+	possible = {
+		OR = {
+			p:x8A8A20.state = {
+				has_building = building_panama_canal
+			}
+			AND = {
+				owns_treaty_port_in = STATE_PANAMA
+				p:xD0EF40.owner = {
+					NOT = {
+						custom_tooltip = {
+							text = panama_survey_complete_tooltip
+							has_variable = panama_survey_complete
+						}
+					}
+				}
+			}
+		}
+		OR = {
+			country_rank > p:xD0EF40.owner.country_rank
+			prestige > {
+				add = p:xD0EF40.owner.prestige
+				multiply = 2
+			}
+		}
+	}
+	when_taken = {
+		add_modifier = {
+			name = cs_panama_purchase
+			months = 60
+			multiplier = 0.1
+		}
+		p:xD0EF40.owner = {
+			add_modifier = {
+				name = cs_panama_sale
+				months = 60
+				multiplier = 0.1
+			}
+			post_notification = cs_noti_purchase_colon_for_panama_canal
+		}
+		s:STATE_PANAMA = {
+			set_owner_of_provinces = {
+				country = root
+				provinces = {
+					xD0EF40
+				}
+			}
+		}
+	}
+}
+
+cs_decision_purchase_kiel_city_for_kiel_canal = {
+	is_shown = {
+		is_player = yes
+		has_variable = kiel_survey_complete
+		p:x64824C.owner != root
+		p:x60809F.owner = root
+		p:x64824C.state = {
+			NOT = {
+				has_building = building_kiel_canal
+			}
+		}
+	}
+	possible = {
+		OR = {
+			p:x60809F.state = {
+				has_building = building_kiel_canal
+			}
+			AND = {
+				owns_treaty_port_in = STATE_SCHLESWIG_HOLSTEIN
+				p:x64824C.owner = {
+					NOT = {
+						custom_tooltip = {
+							text = kiel_survey_complete_tooltip
+							has_variable = kiel_survey_complete
+						}
+					}
+				}
+			}
+		}
+		OR = {
+			country_rank > p:x64824C.owner.country_rank
+			prestige > {
+				add = p:x64824C.owner.prestige
+				multiply = 2
+			}
+		}
+	}
+	when_taken = {
+		add_modifier = {
+			name = kiel_purchase
+			months = 60
+			multiplier = 0.1
+		}
+		p:x64824C.owner = {
+			add_modifier = {
+				name = kiel_sale
+				months = 60
+				multiplier = 0.1
+			}
+			post_notification = cs_noti_purchase_kiel_city_for_kiel_canal
+		}
+		s:STATE_SCHLESWIG_HOLSTEIN = {
+			set_owner_of_provinces = {
+				country = root
+				provinces = {
+					x64824C
+				}
+			}
+		}
+	}
+}
+
+cs_kiel_survey_decision = {
+	is_shown = {
+		has_interest_marker_in_region = region_north_germany
+		NOT = {
+			has_variable = survey_kiel_taken
+			has_variable = kiel_survey_complete
+		}
+		s:STATE_SCHLESWIG_HOLSTEIN = {
+			any_scope_state = {
+				NOT = {
+					any_scope_building = {
+						is_building_type = building_kiel_canal
+					}
+				}
+			}
+		}
+	}
+	possible = {
+		has_technology_researched = civilizing_mission
+		produced_bureaucracy > 500
+	}
+	when_taken = {
+		set_variable = {
+			name = survey_kiel_taken
+			value = 0
+		}
+		add_modifier = {
+			name = modifier_surveying_kiel
+		}
+		add_journal_entry = {
+			type = je_cs_kiel_survey
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}

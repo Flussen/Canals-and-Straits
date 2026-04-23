@@ -1,0 +1,523 @@
+﻿cs_monthly_reapply_maritime_policies = {
+	save_scope_as = cs_controller
+	if = {
+		limit = {
+			has_modifier = cs_gibraltar_control
+		}
+		remove_modifier = cs_gibraltar_control
+	}
+	if = {
+		limit = {
+			has_modifier = cs_bosphorus_control
+		}
+		remove_modifier = cs_bosphorus_control
+	}
+	if = {
+		limit = {
+			has_modifier = cs_malacca_control
+		}
+		remove_modifier = cs_malacca_control
+	}
+	if = {
+		limit = {
+			has_modifier = cs_hormuz_control
+		}
+		remove_modifier = cs_hormuz_control
+	}
+	if = {
+		limit = {
+			has_modifier = cs_hormuz_regional_primacy
+		}
+		remove_modifier = cs_hormuz_regional_primacy
+	}
+	if = {
+		limit = {
+			OR = {
+				any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA }
+				any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA }
+				any_subject_or_below = { any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA } }
+				any_subject_or_below = { any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA } }
+				country_or_subject_owns_entire_state_region = STATE_AL_RIF
+			}
+		}
+		add_modifier = {
+			name = cs_gibraltar_control
+			days = 45
+		}
+		if = { limit = { has_modifier = cs_gibraltar_policy_open } remove_modifier = cs_gibraltar_policy_open }
+		if = { limit = { has_modifier = cs_gibraltar_policy_tolls } remove_modifier = cs_gibraltar_policy_tolls }
+		if = { limit = { has_modifier = cs_gibraltar_policy_blockade } remove_modifier = cs_gibraltar_policy_blockade }
+		if = {
+			limit = { has_variable = cs_gibraltar_policy_open_var }
+			add_modifier = { name = cs_gibraltar_policy_open days = 45 }
+		}
+		else_if = {
+			limit = { has_variable = cs_gibraltar_policy_blockade_var }
+			add_modifier = { name = cs_gibraltar_policy_blockade days = 45 }
+		}
+		else = {
+			add_modifier = {
+				name = cs_gibraltar_policy_tolls
+				days = 45
+			}
+		}
+	}
+	if = {
+		limit = {
+			country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
+		}
+		add_modifier = {
+			name = cs_bosphorus_control
+			days = 45
+		}
+		if = { limit = { has_modifier = cs_bosphorus_policy_open } remove_modifier = cs_bosphorus_policy_open }
+		if = { limit = { has_modifier = cs_bosphorus_policy_tolls } remove_modifier = cs_bosphorus_policy_tolls }
+		if = { limit = { has_modifier = cs_bosphorus_policy_blockade } remove_modifier = cs_bosphorus_policy_blockade }
+		if = {
+			limit = { has_variable = cs_bosphorus_policy_open_var }
+			add_modifier = { name = cs_bosphorus_policy_open days = 45 }
+		}
+		else_if = {
+			limit = { has_variable = cs_bosphorus_policy_blockade_var }
+			add_modifier = { name = cs_bosphorus_policy_blockade days = 45 }
+		}
+		else = {
+			add_modifier = {
+				name = cs_bosphorus_policy_tolls
+				days = 45
+			}
+		}
+	}
+	if = {
+		limit = {
+			country_or_subject_owns_entire_state_region = STATE_MALAYA
+		}
+		add_modifier = {
+			name = cs_malacca_control
+			days = 45
+		}
+		if = { limit = { has_modifier = cs_malacca_policy_open } remove_modifier = cs_malacca_policy_open }
+		if = { limit = { has_modifier = cs_malacca_policy_tolls } remove_modifier = cs_malacca_policy_tolls }
+		if = { limit = { has_modifier = cs_malacca_policy_blockade } remove_modifier = cs_malacca_policy_blockade }
+		if = {
+			limit = { has_variable = cs_malacca_policy_open_var }
+			add_modifier = { name = cs_malacca_policy_open days = 45 }
+		}
+		else_if = {
+			limit = { has_variable = cs_malacca_policy_blockade_var }
+			add_modifier = { name = cs_malacca_policy_blockade days = 45 }
+		}
+		else = {
+			add_modifier = {
+				name = cs_malacca_policy_tolls
+				days = 45
+			}
+		}
+	}
+	if = {
+		limit = {
+			country_or_subject_owns_entire_state_region = STATE_LARISTAN
+		}
+		add_modifier = {
+			name = cs_hormuz_control
+			days = 45
+		}
+		if = { limit = { has_modifier = cs_hormuz_policy_open } remove_modifier = cs_hormuz_policy_open }
+		if = { limit = { has_modifier = cs_hormuz_policy_tolls } remove_modifier = cs_hormuz_policy_tolls }
+		if = { limit = { has_modifier = cs_hormuz_policy_blockade } remove_modifier = cs_hormuz_policy_blockade }
+		if = {
+			limit = { has_variable = cs_hormuz_policy_open_var }
+			add_modifier = { name = cs_hormuz_policy_open days = 45 }
+		}
+		else_if = {
+			limit = { has_variable = cs_hormuz_policy_blockade_var }
+			add_modifier = { name = cs_hormuz_policy_blockade days = 45 }
+		}
+		else = {
+			add_modifier = {
+				name = cs_hormuz_policy_tolls
+				days = 45
+			}
+		}
+		if = {
+			limit = {
+				this = c:PER
+			}
+			add_modifier = {
+				name = cs_hormuz_regional_primacy
+				days = 45
+			}
+		}
+	}
+	if = { limit = { has_modifier = cs_suez_policy_free } remove_modifier = cs_suez_policy_free }
+	if = { limit = { has_modifier = cs_suez_policy_allied_tolls } remove_modifier = cs_suez_policy_allied_tolls }
+	if = { limit = { has_modifier = cs_suez_policy_strict } remove_modifier = cs_suez_policy_strict }
+	if = { limit = { has_modifier = cs_panama_policy_free } remove_modifier = cs_panama_policy_free }
+	if = { limit = { has_modifier = cs_panama_policy_allied_tolls } remove_modifier = cs_panama_policy_allied_tolls }
+	if = { limit = { has_modifier = cs_panama_policy_strict } remove_modifier = cs_panama_policy_strict }
+	if = { limit = { has_modifier = cs_kiel_policy_free } remove_modifier = cs_kiel_policy_free }
+	if = { limit = { has_modifier = cs_kiel_policy_allied_tolls } remove_modifier = cs_kiel_policy_allied_tolls }
+	if = { limit = { has_modifier = cs_kiel_policy_strict } remove_modifier = cs_kiel_policy_strict }
+	if = {
+		limit = { has_variable = cs_suez_policy_free_var }
+		add_modifier = { name = cs_suez_policy_free days = 45 }
+	}
+	else_if = {
+		limit = { has_variable = cs_suez_policy_strict_var }
+		add_modifier = { name = cs_suez_policy_strict days = 45 }
+	}
+	else_if = {
+		limit = { has_variable = cs_suez_policy_allied_tolls_var }
+		add_modifier = { name = cs_suez_policy_allied_tolls days = 45 }
+	}
+	if = {
+		limit = { has_variable = cs_panama_policy_free_var }
+		add_modifier = { name = cs_panama_policy_free days = 45 }
+	}
+	else_if = {
+		limit = { has_variable = cs_panama_policy_strict_var }
+		add_modifier = { name = cs_panama_policy_strict days = 45 }
+	}
+	else_if = {
+		limit = { has_variable = cs_panama_policy_allied_tolls_var }
+		add_modifier = { name = cs_panama_policy_allied_tolls days = 45 }
+	}
+	if = {
+		limit = { has_variable = cs_kiel_policy_free_var }
+		add_modifier = { name = cs_kiel_policy_free days = 45 }
+	}
+	else_if = {
+		limit = { has_variable = cs_kiel_policy_strict_var }
+		add_modifier = { name = cs_kiel_policy_strict days = 45 }
+	}
+	else_if = {
+		limit = { has_variable = cs_kiel_policy_allied_tolls_var }
+		add_modifier = { name = cs_kiel_policy_allied_tolls days = 45 }
+	}
+	every_country = {
+		if = {
+			limit = {
+				has_modifier = cs_strait_toll_minor
+			}
+			remove_modifier = cs_strait_toll_minor
+		}
+		if = {
+			limit = {
+				has_modifier = cs_strait_toll_major
+			}
+			remove_modifier = cs_strait_toll_major
+		}
+		if = {
+			limit = {
+				has_modifier = cs_strait_blocked
+			}
+			remove_modifier = cs_strait_blocked
+		}
+		if = {
+			limit = {
+				has_modifier = cs_canal_transit_allied
+			}
+			remove_modifier = cs_canal_transit_allied
+		}
+		if = {
+			limit = {
+				has_modifier = cs_canal_transit_neutral
+			}
+			remove_modifier = cs_canal_transit_neutral
+		}
+		if = {
+			limit = {
+				has_modifier = cs_canal_transit_hostile
+			}
+			remove_modifier = cs_canal_transit_hostile
+		}
+	}
+	every_country = {
+		limit = {
+			NOT = {
+				THIS = scope:cs_controller
+			}
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_gibraltar_policy_blockade
+				}
+				scope:cs_controller = {
+					OR = {
+						any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA }
+						any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA }
+						any_subject_or_below = { any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA } }
+						any_subject_or_below = { any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA } }
+						country_or_subject_owns_entire_state_region = STATE_AL_RIF
+					}
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_strait_blocked
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_gibraltar_policy_tolls
+				}
+				scope:cs_controller = {
+					OR = {
+						any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA }
+						any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA }
+						any_subject_or_below = { any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA } }
+						any_subject_or_below = { any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA } }
+						country_or_subject_owns_entire_state_region = STATE_AL_RIF
+					}
+				}
+			}
+			add_modifier = {
+				name = cs_strait_toll_major
+				days = 45
+			}
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_bosphorus_policy_blockade
+				}
+				scope:cs_controller = {
+					country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_strait_blocked
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_bosphorus_policy_tolls
+				}
+				scope:cs_controller = {
+					country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
+				}
+			}
+			add_modifier = {
+				name = cs_strait_toll_major
+				days = 45
+			}
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_malacca_policy_blockade
+				}
+				scope:cs_controller = {
+					country_or_subject_owns_entire_state_region = STATE_MALAYA
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_strait_blocked
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_malacca_policy_tolls
+				}
+				scope:cs_controller = {
+					country_or_subject_owns_entire_state_region = STATE_MALAYA
+				}
+			}
+			add_modifier = {
+				name = cs_strait_toll_major
+				days = 45
+			}
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_hormuz_policy_blockade
+				}
+				scope:cs_controller = {
+					country_or_subject_owns_entire_state_region = STATE_LARISTAN
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_strait_blocked
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					has_modifier = cs_hormuz_policy_tolls
+				}
+				scope:cs_controller = {
+					country_or_subject_owns_entire_state_region = STATE_LARISTAN
+				}
+			}
+			add_modifier = {
+				name = cs_strait_toll_major
+				days = 45
+			}
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_SINAI = { any_scope_state = { owner = scope:cs_controller has_building = building_suez_canal } }
+					has_modifier = cs_suez_policy_allied_tolls
+				}
+				OR = {
+					is_subject_of = scope:cs_controller
+					scope:cs_controller = { is_subject_of = this }
+					is_in_same_power_bloc = scope:cs_controller
+				}
+			}
+			add_modifier = { name = cs_canal_transit_allied days = 45 }
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_SINAI = {
+						any_scope_state = {
+							owner = scope:cs_controller
+							has_building = building_suez_canal
+						}
+					}
+					has_modifier = cs_suez_policy_strict
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_canal_transit_hostile
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_SINAI = {
+						any_scope_state = {
+							owner = scope:cs_controller
+							has_building = building_suez_canal
+						}
+					}
+					OR = {
+						has_modifier = cs_suez_policy_allied_tolls
+						has_modifier = cs_suez_policy_strict
+					}
+				}
+			}
+			add_modifier = { name = cs_canal_transit_neutral days = 45 }
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_PANAMA = { any_scope_state = { owner = scope:cs_controller has_building = building_panama_canal } }
+					has_modifier = cs_panama_policy_allied_tolls
+				}
+				OR = {
+					is_subject_of = scope:cs_controller
+					scope:cs_controller = { is_subject_of = this }
+					is_in_same_power_bloc = scope:cs_controller
+				}
+			}
+			add_modifier = { name = cs_canal_transit_allied days = 45 }
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_PANAMA = {
+						any_scope_state = {
+							owner = scope:cs_controller
+							has_building = building_panama_canal
+						}
+					}
+					has_modifier = cs_panama_policy_strict
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_canal_transit_hostile
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_PANAMA = {
+						any_scope_state = {
+							owner = scope:cs_controller
+							has_building = building_panama_canal
+						}
+					}
+					OR = {
+						has_modifier = cs_panama_policy_allied_tolls
+						has_modifier = cs_panama_policy_strict
+					}
+				}
+			}
+			add_modifier = {
+				name = cs_canal_transit_neutral
+				days = 45
+			}
+		}
+		if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = scope:cs_controller has_building = building_kiel_canal } }
+					has_modifier = cs_kiel_policy_allied_tolls
+				}
+				OR = {
+					is_subject_of = scope:cs_controller
+					scope:cs_controller = { is_subject_of = this }
+					is_in_same_power_bloc = scope:cs_controller
+				}
+			}
+			add_modifier = { name = cs_canal_transit_allied days = 45 }
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_SCHLESWIG_HOLSTEIN = {
+						any_scope_state = {
+							owner = scope:cs_controller
+							has_building = building_kiel_canal
+						}
+					}
+					has_modifier = cs_kiel_policy_strict
+				}
+				has_war_with = scope:cs_controller
+			}
+			add_modifier = {
+				name = cs_canal_transit_hostile
+				days = 45
+			}
+		}
+		else_if = {
+			limit = {
+				scope:cs_controller = {
+					s:STATE_SCHLESWIG_HOLSTEIN = {
+						any_scope_state = {
+							owner = scope:cs_controller
+							has_building = building_kiel_canal
+						}
+					}
+					OR = {
+						has_modifier = cs_kiel_policy_allied_tolls
+						has_modifier = cs_kiel_policy_strict
+					}
+				}
+			}
+			add_modifier = {
+				name = cs_canal_transit_neutral
+				days = 45
+			}
+		}
+	}
+}

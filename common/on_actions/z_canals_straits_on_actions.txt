@@ -1,0 +1,13 @@
+﻿cs_monthly_country_pulse = {
+	effect = {
+		every_country = {
+			cs_monthly_reapply_maritime_policies = yes
+		}
+	}
+}
+
+on_monthly_pulse = {
+	on_actions = {
+		cs_monthly_country_pulse
+	}
+}

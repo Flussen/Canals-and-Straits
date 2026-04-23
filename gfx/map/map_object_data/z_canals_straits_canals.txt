@@ -1,0 +1,15 @@
+﻿game_object_locator={
+	name="canal_kiel_locator"
+	clamp_to_water_level=yes
+	render_under_water=yes
+	generated_content=no
+	layer="static"
+	instances={
+		{
+			id=1
+			position={ 4310.700000 0.000000 2885.940000 }
+			rotation={ 0.00000 0.999999 0.000000 -0.300000 }
+			scale={ 2.100000 1.200000 1.000000 }
+		}
+	}
+}

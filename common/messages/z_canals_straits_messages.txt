@@ -1,0 +1,17 @@
+﻿zw_noti_pruchase_port_said_for_suez_canal = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/interest.dds"
+	notification_type = feed
+}
+
+cs_noti_purchase_colon_for_panama_canal = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/interest.dds"
+	notification_type = feed
+}
+
+cs_noti_purchase_kiel_city_for_kiel_canal = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/interest.dds"
+	notification_type = feed
+}
