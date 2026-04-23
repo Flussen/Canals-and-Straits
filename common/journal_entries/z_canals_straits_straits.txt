@@ -23,85 +23,22 @@
 	complete = { always = no }
 }
 
-je_cs_suez_control = {
-	icon = "gfx/interface/icons/event_icons/event_trade.dds"
-	group = je_group_historical_content
-	weight = 100
-	should_be_pinned_by_default = yes
-	scripted_button = cs_button_suez_open
-	scripted_button = cs_button_suez_tolls
-	scripted_button = cs_button_suez_strict
-	is_shown_when_inactive = {
-		s:STATE_SINAI = {
-			any_scope_state = {
-				owner = root
-				any_scope_building = { is_building_type = building_suez_canal }
-			}
-		}
-	}
-	possible = {
-		s:STATE_SINAI = {
-			any_scope_state = {
-				owner = root
-				any_scope_building = { is_building_type = building_suez_canal }
-			}
-		}
-	}
-	complete = { always = no }
-}
-
-je_cs_panama_control = {
-	icon = "gfx/interface/icons/event_icons/event_trade.dds"
-	group = je_group_historical_content
-	weight = 100
-	should_be_pinned_by_default = yes
-	scripted_button = cs_button_panama_open
-	scripted_button = cs_button_panama_tolls
-	scripted_button = cs_button_panama_strict
-	is_shown_when_inactive = {
-		s:STATE_PANAMA = {
-			any_scope_state = {
-				owner = root
-				any_scope_building = { is_building_type = building_panama_canal }
-			}
-		}
-	}
-	possible = {
-		s:STATE_PANAMA = {
-			any_scope_state = {
-				owner = root
-				any_scope_building = { is_building_type = building_panama_canal }
-			}
-		}
-	}
-	complete = { always = no }
-}
-
 je_cs_kiel_survey = {
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
 	group = je_group_technology
 	on_monthly_pulse = {
 		effect = {
-			change_variable = {
-				name = survey_kiel_taken
-				add = 1
-			}
+			change_variable = { name = survey_kiel_taken add = 1 }
 		}
 	}
-	complete = {
-		scope:journal_entry = { is_goal_complete = yes }
-	}
+	complete = { scope:journal_entry = { is_goal_complete = yes } }
 	on_complete = {
 		remove_modifier = modifier_surveying_kiel
 		remove_variable = survey_kiel_taken
 		set_variable = kiel_survey_complete
 	}
-	current_value = {
-		value = root.var:survey_kiel_taken
-	}
-	goal_add_value = {
-		value = 12
-	}
+	current_value = { value = root.var:survey_kiel_taken }
+	goal_add_value = { value = 12 }
 	invalid = {
 		OR = {
 			NOT = { has_variable = survey_kiel_taken }
@@ -120,33 +57,6 @@ je_cs_kiel_survey = {
 	progressbar = yes
 	weight = 10
 	should_be_pinned_by_default = yes
-}
-
-je_cs_kiel_control = {
-	icon = "gfx/interface/icons/event_icons/event_trade.dds"
-	group = je_group_historical_content
-	weight = 95
-	should_be_pinned_by_default = yes
-	scripted_button = cs_button_kiel_open
-	scripted_button = cs_button_kiel_tolls
-	scripted_button = cs_button_kiel_strict
-	is_shown_when_inactive = {
-		s:STATE_SCHLESWIG_HOLSTEIN = {
-			any_scope_state = {
-				owner = root
-				any_scope_building = { is_building_type = building_kiel_canal }
-			}
-		}
-	}
-	possible = {
-		s:STATE_SCHLESWIG_HOLSTEIN = {
-			any_scope_state = {
-				owner = root
-				any_scope_building = { is_building_type = building_kiel_canal }
-			}
-		}
-	}
-	complete = { always = no }
 }
 
 je_cs_gibraltar_control = {

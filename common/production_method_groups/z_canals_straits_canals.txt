@@ -3,8 +3,8 @@
 	ai_selection = most_productive
 
 	production_methods = {
-		pm_privately_owned_canal
 		pm_government_run_canal
+		pm_privately_owned_canal
 	}
 }
 
@@ -14,6 +14,9 @@ pmg_canal_tolls = {
 
 	production_methods = {
 		pm_free_transit
+		pm_standard_tolls
+		pm_tolls_except_allies
 		pm_toll_collection
+		pm_total_blockade
 	}
 }

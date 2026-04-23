@@ -37,10 +37,70 @@ pm_government_run_canal = {
 pm_free_transit = {
 	texture = "gfx/interface/icons/production_method_icons/canals.dds"
 
+	country_modifiers = {
+		workforce_scaled = {
+			country_prestige_add = 5
+			country_improve_relations_speed_mult = 0.10
+		}
+	}
+
 	state_modifiers = {
 		unscaled = {
-			building_trade_center_throughput_add = 0.10
-			state_trade_advantage_mult = 0.05
+			building_trade_center_throughput_add = 0.15
+			state_trade_advantage_mult = 0.08
+		}
+	}
+}
+
+pm_standard_tolls = {
+	texture = "gfx/interface/icons/production_method_icons/canals.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 5
+			goods_input_clippers_add = 5
+			goods_input_steamers_add = 2
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 900
+			country_bureaucracy_add = -120
+		}
+	}
+
+	state_modifiers = {
+		unscaled = {
+			building_trade_center_throughput_add = 0.06
+			state_trade_advantage_mult = 0.08
+		}
+	}
+}
+
+pm_tolls_except_allies = {
+	texture = "gfx/interface/icons/production_method_icons/canals.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 10
+			goods_input_steamers_add = 5
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 800
+			country_bureaucracy_add = -300
+			country_prestige_add = 10
+			power_bloc_cohesion_add = 5
+		}
+	}
+
+	state_modifiers = {
+		unscaled = {
+			building_trade_center_throughput_add = 0.08
+			state_trade_advantage_mult = 0.10
 		}
 	}
 }
@@ -48,17 +108,42 @@ pm_free_transit = {
 pm_toll_collection = {
 	texture = "gfx/interface/icons/production_method_icons/canals.dds"
 
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 8
+			goods_input_steamers_add = 3
+			goods_input_clippers_add = 3
+		}
+	}
+
 	country_modifiers = {
 		workforce_scaled = {
-			country_minting_add = 1200
-			country_bureaucracy_add = -20
+			country_minting_add = 1400
+			country_bureaucracy_add = -220
 		}
 	}
 
 	state_modifiers = {
 		unscaled = {
-			building_trade_center_throughput_add = 0.05
-			state_trade_advantage_mult = 0.08
+			building_trade_center_throughput_add = 0.07
+			state_trade_advantage_mult = 0.10
+		}
+	}
+}
+
+pm_total_blockade = {
+	texture = "gfx/interface/icons/production_method_icons/canals.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steamers_add = 8
+			goods_input_manowars_add = 4
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_authority_add = 10
 		}
 	}
 }
