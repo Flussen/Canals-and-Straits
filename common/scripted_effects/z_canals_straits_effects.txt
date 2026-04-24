@@ -2,18 +2,6 @@
 	save_scope_as = cs_controller
 	if = {
 		limit = {
-			NOT = {
-				OR = {
-					has_variable = cs_suez_blockade_infamy_applied
-					has_variable = cs_panama_blockade_infamy_applied
-					has_variable = cs_kiel_blockade_infamy_applied
-				}
-			}
-		}
-		# no-op guard, keeps variables clean when no canal is blockaded
-	}
-	if = {
-		limit = {
 			has_modifier = cs_gibraltar_control
 		}
 		remove_modifier = cs_gibraltar_control
@@ -206,84 +194,108 @@
 		limit = { has_variable = cs_kiel_policy_allied_tolls_var }
 		add_modifier = { name = cs_kiel_policy_allied_tolls days = 45 }
 	}
-	every_country = {
-		if = {
-			limit = {
-				has_modifier = cs_strait_toll_minor
-			}
-			remove_modifier = cs_strait_toll_minor
-		}
-		if = {
-			limit = {
-				has_modifier = cs_strait_toll_major
-			}
-			remove_modifier = cs_strait_toll_major
-		}
-		if = {
-			limit = {
-				has_modifier = cs_strait_blocked
-			}
-			remove_modifier = cs_strait_blocked
-		}
-		if = {
-			limit = {
-				has_modifier = cs_canal_transit_allied
-			}
-			remove_modifier = cs_canal_transit_allied
-		}
-		if = {
-			limit = {
-				has_modifier = cs_canal_transit_neutral
-			}
-			remove_modifier = cs_canal_transit_neutral
-		}
-		if = {
-			limit = {
-				has_modifier = cs_canal_transit_hostile
-			}
-			remove_modifier = cs_canal_transit_hostile
-		}
-	}
 	if = {
 		limit = {
 			s:STATE_SINAI = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_suez_canal has_active_production_method = pm_total_blockade } } }
 			NOT = { has_variable = cs_suez_blockade_infamy_applied }
 		}
-		change_infamy = 2
+		change_infamy = 15
 		set_variable = cs_suez_blockade_infamy_applied
 	}
 	else_if = {
-		limit = { has_variable = cs_suez_blockade_infamy_applied }
+		limit = {
+			has_variable = cs_suez_blockade_infamy_applied
+			NOT = { s:STATE_SINAI = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_suez_canal has_active_production_method = pm_total_blockade } } } }
+		}
 		remove_variable = cs_suez_blockade_infamy_applied
+	}
+	if = {
+		limit = {
+			s:STATE_SINAI = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_suez_canal has_active_production_method = pm_total_blockade } } }
+		}
+		every_country = {
+			limit = {
+				NOT = { THIS = scope:cs_controller }
+				OR = {
+					country_rank = rank_value:great_power
+					has_interest_marker_in_region = region_nile_basin
+					has_interest_marker_in_region = region_north_africa
+				}
+			}
+			change_relations = { country = scope:cs_controller value = -10 }
+		}
 	}
 	if = {
 		limit = {
 			s:STATE_PANAMA = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_panama_canal has_active_production_method = pm_total_blockade } } }
 			NOT = { has_variable = cs_panama_blockade_infamy_applied }
 		}
-		change_infamy = 2
+		change_infamy = 15
 		set_variable = cs_panama_blockade_infamy_applied
 	}
 	else_if = {
-		limit = { has_variable = cs_panama_blockade_infamy_applied }
+		limit = {
+			has_variable = cs_panama_blockade_infamy_applied
+			NOT = { s:STATE_PANAMA = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_panama_canal has_active_production_method = pm_total_blockade } } } }
+		}
 		remove_variable = cs_panama_blockade_infamy_applied
+	}
+	if = {
+		limit = {
+			s:STATE_PANAMA = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_panama_canal has_active_production_method = pm_total_blockade } } }
+		}
+		every_country = {
+			limit = {
+				NOT = { THIS = scope:cs_controller }
+				OR = {
+					country_rank = rank_value:great_power
+					has_interest_marker_in_region = region_central_america
+				}
+			}
+			change_relations = { country = scope:cs_controller value = -10 }
+		}
 	}
 	if = {
 		limit = {
 			s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_kiel_canal has_active_production_method = pm_total_blockade } } }
 			NOT = { has_variable = cs_kiel_blockade_infamy_applied }
 		}
-		change_infamy = 2
+		change_infamy = 15
 		set_variable = cs_kiel_blockade_infamy_applied
 	}
 	else_if = {
-		limit = { has_variable = cs_kiel_blockade_infamy_applied }
+		limit = {
+			has_variable = cs_kiel_blockade_infamy_applied
+			NOT = { s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_kiel_canal has_active_production_method = pm_total_blockade } } } }
+		}
 		remove_variable = cs_kiel_blockade_infamy_applied
+	}
+	if = {
+		limit = {
+			s:STATE_SCHLESWIG_HOLSTEIN = { any_scope_state = { owner = scope:cs_controller any_scope_building = { is_building_type = building_kiel_canal has_active_production_method = pm_total_blockade } } }
+		}
+		every_country = {
+			limit = {
+				NOT = { THIS = scope:cs_controller }
+				OR = {
+					country_rank = rank_value:great_power
+					has_interest_marker_in_region = region_north_germany
+					has_interest_marker_in_region = region_north_sea_coast
+					has_interest_marker_in_region = region_baltic
+				}
+			}
+			change_relations = { country = scope:cs_controller value = -8 }
+		}
 	}
 	every_country = {
 		limit = {
 			NOT = {
 				THIS = scope:cs_controller
+			}
+			any_scope_state = {
+				any_scope_building = {
+					is_building_type = building_port
+				}
 			}
 		}
 		if = {

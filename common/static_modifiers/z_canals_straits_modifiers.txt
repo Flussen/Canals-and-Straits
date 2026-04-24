@@ -203,18 +203,18 @@ cs_strait_blocked = {
 
 cs_canal_transit_allied = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	country_convoys_capacity_mult = 0.02
+	country_convoys_capacity_mult = 0.01
 }
 
 cs_canal_transit_neutral = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_convoys_capacity_mult = -0.04
-	country_expenses_add = 4000
+	country_convoys_capacity_mult = -0.015
+	country_expenses_add = 300
 }
 
 cs_canal_transit_hostile = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_convoys_capacity_mult = -0.12
-	country_convoy_damage_taken_mult = 0.10
-	country_expenses_add = 10000
+	country_convoys_capacity_mult = -0.05
+	country_convoy_damage_taken_mult = 0.05
+	country_expenses_add = 1200
 }

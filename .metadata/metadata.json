@@ -22,7 +22,8 @@
   "replace_paths": [
     "common/buildings/10_canals.txt",
     "common/journal_entries/00_canals.txt",
-    "common/company_types/00_companies_africa.txt"
+    "common/company_types/00_companies_africa.txt",
+    "common/company_types/00_companies_americas.txt"
   ],
   "game_custom_data": {
     "multiplayer_synchronized": true
