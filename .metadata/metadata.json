@@ -2,6 +2,7 @@
   "name": "Canals and Straits",
   "id": "",
   "version": "1.0.0",
+  "picture": "thumbnail.png",
   "supported_game_version": "1.12.*",
   "short_description": "Overhaul of maritime chokepoints: toll canals, blockable straits, and naval geopolitics.",
   "tags": [
