@@ -219,10 +219,8 @@ copies or substantial portions of the Software.
 
 ## Links
 
-- [Steam Workshop](https://steamcommunity.com) *(add link when published)*
-- [GitHub Repository](https://github.com) *(add if applicable)*
+- [Steam Workshop](https://steamcommunity.com)
 - [Community Mod Framework](https://github.com/Victoria-3-Modding-Co-op/Community-Mod-Framework)
-- [Paradox Mods](https://mods.paradoxplaza.com)
 
 ---
 
