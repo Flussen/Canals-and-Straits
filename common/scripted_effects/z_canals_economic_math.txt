@@ -13,7 +13,6 @@
 
 cs_apply_canal_profit = {
 	set_variable = { name = cs_canal_profit_var value = cs_canal_base_fee }
-	change_variable = { name = cs_canal_profit_var multiply = var:cs_canal_level_var }
 	change_variable = { name = cs_canal_profit_var multiply = global_var:cs_global_relevant_gdp }
 	change_variable = { name = cs_canal_profit_var divide = cs_canal_gdp_scaling_constant }
 
@@ -43,7 +42,6 @@ cs_apply_canal_profit = {
 		}
 	}
 
-	remove_variable = cs_canal_level_var
 	remove_variable = cs_canal_profit_var
 	remove_variable = cs_canal_tax_share
 }
@@ -72,7 +70,6 @@ cs_find_canal_and_apply_profit = {
 			every_scope_building = {
 				limit = { is_building_type = $CANAL_TYPE$ }
 				save_scope_as = cs_target_canal
-				set_variable = { name = cs_canal_level_var value = level }
 			}
 		}
 		cs_apply_canal_profit = yes
@@ -80,7 +77,9 @@ cs_find_canal_and_apply_profit = {
 }
 
 cs_calculate_canal_profits = {
-	cs_find_canal_and_apply_profit = { CANAL_TYPE = building_suez_canal }
-	cs_find_canal_and_apply_profit = { CANAL_TYPE = building_panama_canal }
-	cs_find_canal_and_apply_profit = { CANAL_TYPE = building_kiel_canal }
+	every_country = {
+		cs_find_canal_and_apply_profit = { CANAL_TYPE = building_suez_canal }
+		cs_find_canal_and_apply_profit = { CANAL_TYPE = building_panama_canal }
+		cs_find_canal_and_apply_profit = { CANAL_TYPE = building_kiel_canal }
+	}
 }

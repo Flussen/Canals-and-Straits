@@ -44,13 +44,7 @@ cs_gibraltar_control_both = {
 	state_trade_advantage_mult = 0.10
 	country_convoys_capacity_mult = 0.05
 	country_prestige_add = 15
-	country_naval_cap_mult = 0.05
-}
-
-cs_bosphorus_control = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	state_trade_advantage_mult = 0.06
-	country_convoys_capacity_mult = 0.025
+	country_influence_mult = 0.05
 }
 
 cs_bosphorus_control_both = {
@@ -58,13 +52,7 @@ cs_bosphorus_control_both = {
 	state_trade_advantage_mult = 0.12
 	country_convoys_capacity_mult = 0.05
 	country_prestige_add = 15
-	country_naval_cap_mult = 0.05
-}
-
-cs_malacca_control = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	state_trade_advantage_mult = 0.07
-	country_convoys_capacity_mult = 0.025
+	country_influence_mult = 0.05
 }
 
 cs_malacca_control_both = {
@@ -72,7 +60,7 @@ cs_malacca_control_both = {
 	state_trade_advantage_mult = 0.14
 	country_convoys_capacity_mult = 0.05
 	country_prestige_add = 15
-	country_naval_cap_mult = 0.05
+	country_influence_mult = 0.05
 }
 
 cs_hormuz_control = {
@@ -86,7 +74,7 @@ cs_hormuz_control_both = {
 	state_trade_advantage_mult = 0.16
 	country_convoys_capacity_mult = 0.05
 	country_prestige_add = 15
-	country_naval_cap_mult = 0.05
+	country_influence_mult = 0.05
 }
 
 cs_hormuz_regional_primacy = {
