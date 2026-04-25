@@ -1,0 +1,50 @@
+﻿dp_force_open_canal = {
+	war_goal = force_open_canal
+
+	texture = "gfx/interface/icons/war_goals/humiliation.dds"
+
+	requires_interest_marker = no
+
+	selectable_in_lens = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+	}
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+		NOT = { is_subject_of = scope:target_country }
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { is_subject_of = root }
+			OR = {
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_suez_canal
+						has_active_production_method = pm_total_blockade
+					}
+				}
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_panama_canal
+						has_active_production_method = pm_total_blockade
+					}
+				}
+				any_scope_state = {
+					any_scope_building = {
+						is_building_type = building_kiel_canal
+						has_active_production_method = pm_total_blockade
+					}
+				}
+			}
+		}
+	}
+
+	ai_acceptance_max = 100
+
+	on_weekly_pulse = {}
+
+	on_war_begins = {}
+
+	on_war_end = {}
+}

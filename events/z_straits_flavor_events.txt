@@ -1,0 +1,54 @@
+﻿namespace = straits_events
+
+straits_events.1 = {
+	type = country_event
+
+	title = straits_events.1.t
+	desc = straits_events.1.d
+	flavor = straits_events.1.f
+
+	event_image = {
+		video = "gfx/event_pictures/africa_mediterranean_port.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	immediate = {
+		save_scope_as = gibraltar_controller
+	}
+
+	option = {
+		name = straits_events.1.a
+		default_option = yes
+		custom_tooltip = straits_events.1.a_tt
+
+		every_country = {
+			limit = {
+				OR = {
+					country_rank = rank_value:great_power
+					country_rank = rank_value:major_power
+				}
+				any_scope_state = { is_coastal = yes }
+				NOT = { this = ROOT }
+				NOT = { has_war_with = ROOT }
+			}
+			change_relations = {
+				country = ROOT
+				value = 20
+			}
+		}
+	}
+
+	option = {
+		name = straits_events.1.b
+		custom_tooltip = straits_events.1.b_tt
+
+		change_infamy = 5
+		add_modifier = {
+			name = cs_gibraltar_hegemony_strong
+			months = 24
+		}
+	}
+}

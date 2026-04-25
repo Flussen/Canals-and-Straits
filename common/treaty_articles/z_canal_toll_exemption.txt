@@ -1,0 +1,227 @@
+﻿canal_toll_exemption = {
+    kind = directed
+    cost = 75
+
+    relations_progress_per_day = 1
+    relations_improvement_max = 25
+
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transit_rights_treaties.dds"
+
+	flags = {
+		friendly
+		can_be_renegotiated
+		giftable
+	}
+
+	maintenance_paid_by = target_country
+    usage_limit = once_per_side
+
+	visible = {
+		NOT = { is_country_type = decentralized }
+	}
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		scope:other_country = {
+			NOT = { is_country_type = decentralized }
+		}
+		OR = {
+			AND = {
+				OR = {
+					any_scope_building = {
+						is_building_type = building_suez_canal
+					}
+					any_scope_building = {
+						is_building_type = building_panama_canal
+					}
+					any_scope_building = {
+						is_building_type = building_kiel_canal
+					}
+				}
+				scope:other_country = {
+					OR = {
+						has_modifier = cs_suez_transit_toll
+						has_modifier = cs_panama_transit_toll
+						has_modifier = cs_kiel_transit_toll
+					}
+					NOT = {
+						OR = {
+							has_modifier = cs_suez_transit_blocked
+							has_modifier = cs_panama_transit_blocked
+							has_modifier = cs_kiel_transit_blocked
+						}
+					}
+				}
+			}
+			AND = {
+				scope:other_country = {
+					OR = {
+						any_scope_building = {
+							is_building_type = building_suez_canal
+						}
+						any_scope_building = {
+							is_building_type = building_panama_canal
+						}
+						any_scope_building = {
+							is_building_type = building_kiel_canal
+						}
+					}
+				}
+				OR = {
+					has_modifier = cs_suez_transit_toll
+					has_modifier = cs_panama_transit_toll
+					has_modifier = cs_kiel_transit_toll
+				}
+				NOT = {
+					OR = {
+						has_modifier = cs_suez_transit_blocked
+						has_modifier = cs_panama_transit_blocked
+						has_modifier = cs_kiel_transit_blocked
+					}
+				}
+			}
+		}
+	}
+
+	can_ratify = {
+		custom_tooltip = {
+			text = cs_canal_toll_exemption_can_ratify_tooltip
+			scope:source_country = {
+				OR = {
+					any_scope_building = {
+						is_building_type = building_suez_canal
+					}
+					any_scope_building = {
+						is_building_type = building_panama_canal
+					}
+					any_scope_building = {
+						is_building_type = building_kiel_canal
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = DUPLICATE_ARTICLE_SAME_INPUTS_TREATY
+			NOT = {
+				scope:source_country = {
+					any_scope_treaty = {
+						binds = scope:target_country
+						hidden_trigger = {
+							OR = {
+								scope:treaty = {
+									is_renegotiation = no
+								}
+								scope:treaty.amended_treaty != this
+							}
+						}
+						any_scope_article = {
+							has_type = canal_toll_exemption
+						}
+					}
+				}
+			}
+		}
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = "DIPLOMATIC_PACT_REQUIREMENT_AT_PEACE"
+				NOT = { has_war_with = scope:target_country }
+			}
+		}
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = cs_canal_toll_exemption_blockade_tooltip
+				scope:source_country = {
+					NOT = {
+						any_scope_building = {
+							OR = {
+								is_building_type = building_suez_canal
+								is_building_type = building_panama_canal
+								is_building_type = building_kiel_canal
+							}
+							has_active_production_method = pm_total_blockade
+						}
+					}
+				}
+			}
+		}
+	}
+
+    on_entry_into_force = {}
+
+	on_withdrawal = {}
+	on_break = {
+		scope:withdrawing_country = {
+			change_relations = { country = scope:non_withdrawing_country value = -10 }
+		}
+	}
+
+	ai = {
+
+        treaty_categories = {
+			trade
+		}
+
+		evaluation_chance = {
+			value = 0.25
+		}
+
+        article_ai_usage = {
+            offer
+        }
+
+        inherent_accept_score = {
+			value = 0
+
+			if = {
+				limit = {
+					scope:source_country ?= this
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+					value = -10
+				}
+			}
+			else_if = {
+				limit = {
+					scope:target_country ?= this
+				}
+
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+					value = 10
+				}
+			}
+		}
+	}
+
+	wargoal = {
+		execution_priority = 21
+
+		contestion_type = control_any_target_country_state
+
+		maneuvers = {
+			value = 0
+
+			add = {
+				desc = "MANEUVERS_BASE_VALUE"
+				value = 10
+			}
+		}
+
+		infamy = {
+			value = 0
+
+			add = {
+				desc = "INFAMY_BASE_VALUE"
+				value = 2
+			}
+		}
+	}
+}

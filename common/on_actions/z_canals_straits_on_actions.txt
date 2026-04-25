@@ -1,12 +1,13 @@
 ﻿cs_monthly_country_pulse = {
 	effect = {
 		every_country = {
-			if = { limit = { has_modifier = cs_strait_toll_minor } remove_modifier = cs_strait_toll_minor }
-			if = { limit = { has_modifier = cs_strait_toll_major } remove_modifier = cs_strait_toll_major }
 			if = { limit = { has_modifier = cs_strait_blocked } remove_modifier = cs_strait_blocked }
-			if = { limit = { has_modifier = cs_canal_transit_allied } remove_modifier = cs_canal_transit_allied }
-			if = { limit = { has_modifier = cs_canal_transit_neutral } remove_modifier = cs_canal_transit_neutral }
-			if = { limit = { has_modifier = cs_canal_transit_hostile } remove_modifier = cs_canal_transit_hostile }
+			if = { limit = { has_modifier = cs_panama_transit_toll } remove_modifier = cs_panama_transit_toll }
+			if = { limit = { has_modifier = cs_panama_transit_blocked } remove_modifier = cs_panama_transit_blocked }
+			if = { limit = { has_modifier = cs_suez_transit_toll } remove_modifier = cs_suez_transit_toll }
+			if = { limit = { has_modifier = cs_suez_transit_blocked } remove_modifier = cs_suez_transit_blocked }
+			if = { limit = { has_modifier = cs_kiel_transit_toll } remove_modifier = cs_kiel_transit_toll }
+			if = { limit = { has_modifier = cs_kiel_transit_blocked } remove_modifier = cs_kiel_transit_blocked }
 		}
 		every_country = {
 			cs_monthly_reapply_maritime_policies = yes
@@ -17,5 +18,6 @@
 on_monthly_pulse = {
 	on_actions = {
 		cs_monthly_country_pulse
+		cs_canal_economic_pulse
 	}
 }

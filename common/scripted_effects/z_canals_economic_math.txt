@@ -1,0 +1,86 @@
+﻿cs_calculate_global_gdp = {
+	set_global_variable = { name = cs_global_relevant_gdp value = 0 }
+	every_country = {
+		limit = {
+			OR = {
+				country_rank = rank_value:great_power
+				country_rank = rank_value:major_power
+			}
+		}
+		change_global_variable = { name = cs_global_relevant_gdp add = this.gdp }
+	}
+}
+
+cs_apply_canal_profit = {
+	set_variable = { name = cs_canal_profit_var value = cs_canal_base_fee }
+	change_variable = { name = cs_canal_profit_var multiply = var:cs_canal_level_var }
+	change_variable = { name = cs_canal_profit_var multiply = global_var:cs_global_relevant_gdp }
+	change_variable = { name = cs_canal_profit_var divide = cs_canal_gdp_scaling_constant }
+
+	if = {
+		limit = {
+			scope:cs_target_canal = {
+				has_active_production_method = pm_government_run_canal
+			}
+		}
+		add_treasury = var:cs_canal_profit_var
+	}
+	else_if = {
+		limit = {
+			scope:cs_target_canal = {
+				has_active_production_method = pm_privately_owned_canal
+			}
+		}
+		set_variable = { name = cs_canal_tax_share value = var:cs_canal_profit_var }
+		change_variable = { name = cs_canal_tax_share multiply = cs_canal_tax_rate_private }
+		add_treasury = var:cs_canal_tax_share
+
+		scope:cs_canal_state = {
+			add_modifier = {
+				name = cs_canal_private_investment_boom
+				days = 30
+			}
+		}
+	}
+
+	remove_variable = cs_canal_level_var
+	remove_variable = cs_canal_profit_var
+	remove_variable = cs_canal_tax_share
+}
+
+cs_find_canal_and_apply_profit = {
+	if = {
+		limit = {
+			any_scope_state = {
+				any_scope_building = {
+					is_building_type = $CANAL_TYPE$
+					OR = {
+						has_active_production_method = pm_standard_tolls
+						has_active_production_method = pm_toll_collection
+						has_active_production_method = pm_tolls_except_allies
+					}
+				}
+			}
+		}
+		every_scope_state = {
+			limit = {
+				any_scope_building = {
+					is_building_type = $CANAL_TYPE$
+				}
+			}
+			save_scope_as = cs_canal_state
+			every_scope_building = {
+				limit = { is_building_type = $CANAL_TYPE$ }
+				save_scope_as = cs_target_canal
+				set_variable = { name = cs_canal_level_var value = level }
+			}
+		}
+		cs_apply_canal_profit = yes
+	}
+}
+
+cs_calculate_canal_profits = {
+	cs_find_canal_and_apply_profit = { CANAL_TYPE = building_suez_canal }
+	cs_find_canal_and_apply_profit = { CANAL_TYPE = building_panama_canal }
+	cs_find_canal_and_apply_profit = { CANAL_TYPE = building_kiel_canal }
+}

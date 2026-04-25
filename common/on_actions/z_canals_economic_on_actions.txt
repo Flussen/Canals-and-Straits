@@ -1,0 +1,6 @@
+﻿cs_canal_economic_pulse = {
+	effect = {
+		cs_calculate_global_gdp = yes
+		cs_calculate_canal_profits = yes
+	}
+}

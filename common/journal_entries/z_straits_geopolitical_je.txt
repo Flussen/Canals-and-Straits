@@ -1,0 +1,56 @@
+﻿je_cs_gibraltar_hegemony = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	group = je_group_historical_content
+	weight = 95
+	should_be_pinned_by_default = yes
+
+	is_shown_when_inactive = {
+		OR = {
+			has_interest_marker_in_region = region_iberia
+			has_interest_marker_in_region = region_north_africa
+		}
+	}
+
+	possible = {
+		NOT = { is_subject = yes }
+		OR = {
+			any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA }
+			any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA }
+			any_subject_or_below = { any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA } }
+			any_subject_or_below = { any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA } }
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = cs_gibraltar_hegemony_complete_tooltip
+			OR = {
+				country_or_subject_owns_entire_state_region = STATE_AL_RIF
+				any_subject_or_below = { country_or_subject_owns_entire_state_region = STATE_AL_RIF }
+			}
+		}
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = cs_gibraltar_hegemony
+			days = -1
+		}
+		trigger_event = { id = straits_events.1 }
+	}
+
+	invalid = {
+		NOR = {
+			any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA }
+			any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA }
+			any_subject_or_below = { any_scope_state = { state_region = s:STATE_LOWER_ANDALUSIA } }
+			any_subject_or_below = { any_scope_state = { state_region = s:STATE_UPPER_ANDALUSIA } }
+		}
+	}
+
+	on_invalid = {
+		remove_modifier = cs_gibraltar_hegemony
+	}
+
+	transferable = no
+}

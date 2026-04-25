@@ -1,0 +1,145 @@
+﻿canal_access_blockade = {
+	groups = {
+		general
+	}
+	requires_approval = no
+	show_confirmation_box = no
+	should_notify_third_parties = yes
+	selectable = {
+		NOT = {
+			is_country_type = decentralized
+		}
+	}
+	potential = {
+		scope:target_country = {
+			NOT = {
+				is_country_type = decentralized
+			}
+			any_scope_state = {
+				is_coastal = yes
+			}
+		}
+	}
+	possible = {
+		OR = {
+			any_scope_building = {
+				is_building_type = building_suez_canal
+			}
+			any_scope_building = {
+				is_building_type = building_panama_canal
+			}
+			any_scope_building = {
+				is_building_type = building_kiel_canal
+			}
+		}
+		scope:target_country = {
+			NOT = {
+				OR = {
+					is_subject_of = root
+					root = {
+						is_subject_of = this
+					}
+					is_in_same_power_bloc = root
+					has_friendly_diplomatic_pact = {
+						TARGET = root
+					}
+				}
+			}
+		}
+	}
+	accept_effect = {
+		change_infamy = 5
+		change_relations = {
+			country = scope:target_country
+			value = -30
+		}
+		add_modifier = {
+			name = cs_canal_blockade_bureaucracy_cost
+			days = 30
+		}
+	}
+	pact = {
+		cost = 150
+		is_hostile = yes
+		is_two_sided_pact = no
+		forced_duration = 12
+		show_in_outliner = yes
+		relations_progress_per_day = -2
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = cs_canal_blockade_relevance_tooltip
+					OR = {
+						has_interest_marker_in_region = scope:target_country.capital.region
+						scope:target_country = {
+							has_interest_marker_in_region = root.capital.region
+						}
+						scope:target_country.relations:root >= relations_threshold:cordial
+						has_war_with = scope:target_country
+					}
+				}
+			}
+		}
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_AT_PEACE"
+					NOT = {
+						has_war_with = scope:target_country
+					}
+				}
+			}
+		}
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = cs_canal_blockade_owner_tooltip
+					any_scope_building = {
+						OR = {
+							is_building_type = building_suez_canal
+							is_building_type = building_panama_canal
+							is_building_type = building_kiel_canal
+						}
+					}
+				}
+			}
+		}
+	}
+	ai = {
+		max_influence_spending_fraction = 0.2
+		evaluation_chance = {
+			value = 0.1
+		}
+		propose_score = {
+			value = 15
+		}
+		will_propose = {
+			OR = {
+				any_scope_building = {
+					is_building_type = building_suez_canal
+				}
+				any_scope_building = {
+					is_building_type = building_panama_canal
+				}
+				any_scope_building = {
+					is_building_type = building_kiel_canal
+				}
+			}
+			scope:target_country.relations:root <= relations_threshold:poor
+			scope:target_country = {
+				NOT = {
+					OR = {
+						is_subject_of = root
+						root = {
+							is_subject_of = this
+						}
+						is_in_same_power_bloc = root
+						has_friendly_diplomatic_pact = {
+							TARGET = root
+						}
+					}
+				}
+			}
+		}
+	}
+}

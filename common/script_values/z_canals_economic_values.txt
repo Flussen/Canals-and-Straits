@@ -1,0 +1,5 @@
+﻿cs_canal_base_fee = 500
+
+cs_canal_gdp_scaling_constant = 10000000
+
+cs_canal_tax_rate_private = 0.3
